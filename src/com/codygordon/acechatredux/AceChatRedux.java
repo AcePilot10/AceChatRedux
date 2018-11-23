@@ -22,19 +22,6 @@ public class AceChatRedux {
 		new AceChatRedux();
 	}
 	
-//	private void seedDatabase() {
-//		Chat chat = new Chat("T6ki1T3LWzfQnqb9w65lEZsD80x2", 
-//				"da8n613sL0UrlHkKCAd6NHTbG9O2");
-//		String chatJson = new Gson().toJson(chat);
-//		
-//		new com.codygordon.firebaserest.database.FirebaseDatabase("ace-chat-redux.firebaseio.com")
-//		.updateData("Chats/" + chat.id, chatJson);
-//		
-//		ChatMessage msgTest= new ChatMessage("T6ki1T3LWzfQnqb9w65lEZsD80x2",
-//				"Test Message");
-//		chatController.addChatMessage(chat.id, msgTest);
-//	}
-	
 	public AceChatRedux() {
 		db = new DatabaseUtil();
 		userController = new UserController();
