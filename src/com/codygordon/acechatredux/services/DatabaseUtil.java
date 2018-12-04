@@ -1,6 +1,6 @@
 package com.codygordon.acechatredux.services;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
@@ -15,10 +15,10 @@ public class DatabaseUtil {
 	
 	private void initFirebase() {
 		try {
-			String path = "bin/firebase_key.json";
-			FileInputStream serviceAccount = new FileInputStream(path);
+			InputStream serviceAccount = DatabaseUtil.class.getResourceAsStream("firebase_key.json");
+			GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccount);
 			FirebaseOptions options = new FirebaseOptions.Builder()
-			  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+			  .setCredentials(credentials)
 			  .setDatabaseUrl("https://ace-chat-redux.firebaseio.com")
 			  .build();
 			FirebaseApp.initializeApp(options);
