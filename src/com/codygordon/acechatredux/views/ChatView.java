@@ -41,7 +41,6 @@ public class ChatView extends JPanel {
 
 		@Override
 		public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
-			
 			Object rawJsonObject = snapshot.getValue();
 			String json = new Gson().toJson(rawJsonObject);
 			JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
